@@ -181,7 +181,7 @@ const Podcast = () => {
                 isChecked={topic.isCompleted}
                 size="lg"
               >
-                {topic.content}
+                <Text as={topic.isCompleted ? "s" : "p"}>{topic.content}</Text>
               </Checkbox>
               <Flex
                 border="1px solid"

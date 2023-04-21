@@ -32,11 +32,19 @@ export const topicRouter = createTRPCRouter({
       });
       if (!findItem) throw new TRPCError({ code: "NOT_FOUND" });
 
+      console.log("HERE IS THE INPUT", input);
+
       // @ts-ignore
       let updateData: Partial<Item> = {};
-      if (input.isCompleted) updateData.isCompleted = input.isCompleted;
       if (input.content) updateData.content = input.content;
       if (input.deleted) updateData.deleted = input.deleted;
+
+      updateData = {
+        ...updateData,
+        isCompleted: input.isCompleted ?? findItem.isCompleted,
+      };
+
+      console.log("HERE IS THE UPDATE DATA:", updateData);
 
       const updatedData = await ctx.prisma.item.update({
         where: { id: input.itemId },
