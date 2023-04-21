@@ -65,7 +65,7 @@ const Podcasts: React.FC = () => {
             _hover={{ transform: "scale(1.01)" }}
           >
             <Text>{podcast.title}</Text>
-            <Text>{dayjs(podcast.createdAt).format("DD MMM YYYY")}</Text>
+            <Text>{dayjs(podcast.podcastDate).format("DD MMM YYYY")}</Text>
           </Flex>
         ))}
       </Flex>
