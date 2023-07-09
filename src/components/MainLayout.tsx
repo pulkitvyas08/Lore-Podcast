@@ -12,7 +12,7 @@ const MainLayout: React.FC<PropsWithChildren<MainLayoutProps>> = ({
   return (
     <Flex width="100%" direction="column">
       <Navbar />
-      <Flex width="100%" marginTop="60px">
+      <Flex width="100%" marginTop="20px" marginBottom="20px" padding="15px">
         {children}
       </Flex>
     </Flex>
